@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using MvcWebGradesApplication.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Injection of our DbContext
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration
+    .GetConnectionString("DataConnectionString")));
 
 var app = builder.Build();
 
