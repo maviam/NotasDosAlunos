@@ -16,3 +16,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.close-alert {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 31px;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+.table-striped tr:nth-child(odd) td{ background-color: #E3EAE0; }

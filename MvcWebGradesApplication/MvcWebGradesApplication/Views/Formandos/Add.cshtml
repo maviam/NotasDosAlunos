@@ -1,0 +1,33 @@
+﻿@using MvcWebGradesApplication.Models.Enums;
+@model MvcWebGradesApplication.Models.FormandoModel
+@{
+	ViewData["Title"] = "Novo Formando";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Formandos" asp-action="Add" method="post">
+	<div class="mb-3">
+		<label for="Nome" class="form-label">Nome do formando</label>
+		<input type="text" class="form-control" id="Nome" asp-for="Nome">
+	</div>
+	<div class="mb-3">
+		<label for="Email" class="form-label">Email</label>
+		<input type="email" class="form-control" id="Email" asp-for="Email">
+	</div>
+	<div class="mb-3">
+		<label for="DataNasc" class="form-label">Data de Nascimento</label>
+		<input type="date" class="form-control" id="Nome" asp-for="DataNascimento">
+	</div>
+	<div class="mb-3">
+		<label for="Tlm" class="form-label">Contato do formando</label>
+		<input type="text" class="form-control" id="Tlm" asp-for="Telemovel">
+	</div>
+	<div class="mb-3">
+		<label for="Sexo" class="form-label">Sexo do formando</label>
+		<select class="form-control" id="Sexo" asp-for="Sexo" asp-items="Html.GetEnumSelectList<SexoEnum>()"></select>
+	</div>
+	
+	<button type="submit" class="btn btn-primary btn-block">Enviar dados</button>
+	<button type="submit" class="btn btn-primary btn-block" asp-controller="Formandos" asp-action="Index">Cancelar</button>
+</form>

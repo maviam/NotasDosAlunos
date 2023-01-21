@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MvcWebGradesApplication.Data;
+using MvcWebGradesApplication.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration
     .GetConnectionString("DataConnectionString")));
+
+builder.Services.AddScoped<IFormandoRepository, FormandoRepository>();
 
 var app = builder.Build();
 
