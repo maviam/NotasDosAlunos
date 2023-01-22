@@ -30,12 +30,68 @@ namespace MvcWebGradesApplication.Controllers
             {
                 TempData["MensagemDeSucesso"] = "Formando inserido com sucesso!";
                 _formandoRepository.Inserir(formando);
-                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                TempData["MensagemDeCancelamento"] = "Erro na inserção do formando! Tente navamente";
+            }
+            
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
             }
 
-            TempData["MensagemDeCancelamento"] = "Erro na inserção do formando! Tente navamente";
-            return RedirectToAction(nameof(Index));
+            var formando = _formandoRepository.ProcurarPorId(id.Value);
+            
+            if (formando == null)
+            {
+                return NotFound();
+            }
 
+            return View(formando);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(FormandoModel formando)
+        {
+            if (formando != null)
+            {
+                TempData["MensagemDeSucesso"] = "Dados do formando atualizados com sucesso!";
+                _formandoRepository.Atualizar(formando);
+            }
+            else
+            {
+                TempData["MensagemDeCancelamento"] = "Erro na atualização dos dados do formando! Tente navamente";
+            }
+            
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {   
+            if (_formandoRepository.Eliminar(id))
+            {
+                TempData["MensagemDeSucesso"] = "Formando removido com sucesso!";
+            }
+            else
+            {
+                TempData["MensagemDeCancelamento"] = "Erro ao remover o formando! Tente navamente";
+            }
+            
+            return RedirectToAction(nameof(Index));
         }
     }
 }
