@@ -1,0 +1,12 @@
+﻿@model MvcWebGradesApplication.Models.FormandoModel
+
+<div class="h2 text-center mt-5">
+	Tem a certeza que deseja remover o(a) formando(a) @Model.Nome?
+</div>
+<div class="text-center remover">
+	<form method="post" asp-action="Delete" class="mt-5">
+		<button class="btn btn-dark col-12 text-uppercase mb-1" type="submit">Sim</button>
+		<button class="btn btn-dark col-12 text-uppercase" type="submit" asp-controller="Formandos" asp-action="Index">Não</button>
+	</form>
+</div>
+

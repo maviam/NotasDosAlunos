@@ -73,10 +73,23 @@ namespace MvcWebGradesApplication.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete()
+        [HttpGet]
+        public IActionResult Delete(int? id)
         {
-            return View();
-        }
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var formando = _formandoRepository.ProcurarPorId(id.Value);
+
+			if (formando == null)
+			{
+				return NotFound();
+			}
+
+			return View(formando);
+		}
 
         [HttpPost]
         [ValidateAntiForgeryToken]

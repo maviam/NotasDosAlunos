@@ -28,3 +28,5 @@ body {
 }
 
 .table-striped tr:nth-child(odd) td{ background-color: #E3EAE0; }
+
+.remover form button { font-size: 1.5em; letter-spacing: 2px; font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; }
