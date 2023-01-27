@@ -13,6 +13,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     .GetConnectionString("DataConnectionString")));
 
 builder.Services.AddScoped<IFormandoRepository, FormandoRepository>();
+builder.Services.AddScoped<IFormadorRepository, FormadorRepository>();
 
 var app = builder.Build();
 

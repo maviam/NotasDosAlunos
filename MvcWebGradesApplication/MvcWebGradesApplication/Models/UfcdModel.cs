@@ -8,6 +8,7 @@ namespace MvcWebGradesApplication.Models
     public class UfcdModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Codigo { get; set; }
         public string Ufcd { get; set; }
         public int Duracao { get; set; }

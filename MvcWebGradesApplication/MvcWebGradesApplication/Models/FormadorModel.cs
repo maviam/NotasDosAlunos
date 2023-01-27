@@ -7,6 +7,7 @@ namespace MvcWebGradesApplication.Models
     public class FormadorModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Nif { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }

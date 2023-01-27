@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MvcWebGradesApplication.Migrations
 {
-    public partial class CriarBaseDados : Migration
+    public partial class CriarBaseDeDados : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +13,7 @@ namespace MvcWebGradesApplication.Migrations
                 name: "Formadores",
                 columns: table => new
                 {
-                    Nif = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nif = table.Column<long>(type: "bigint", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telemovel = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -45,8 +44,7 @@ namespace MvcWebGradesApplication.Migrations
                 name: "Ufcds",
                 columns: table => new
                 {
-                    Codigo = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Codigo = table.Column<int>(type: "int", nullable: false),
                     Ufcd = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Duracao = table.Column<int>(type: "int", nullable: false),
                     Componente = table.Column<int>(type: "int", nullable: false),

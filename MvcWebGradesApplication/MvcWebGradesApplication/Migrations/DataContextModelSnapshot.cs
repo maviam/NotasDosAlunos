@@ -25,10 +25,7 @@ namespace MvcWebGradesApplication.Migrations
             modelBuilder.Entity("MvcWebGradesApplication.Models.FormadorModel", b =>
                 {
                     b.Property<long>("Nif")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Nif"), 1L, 1);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -102,10 +99,7 @@ namespace MvcWebGradesApplication.Migrations
             modelBuilder.Entity("MvcWebGradesApplication.Models.UfcdModel", b =>
                 {
                     b.Property<int>("Codigo")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"), 1L, 1);
 
                     b.Property<int>("Componente")
                         .HasColumnType("int");

@@ -1,0 +1,28 @@
+﻿@model MvcWebGradesApplication.Models.FormadorModel
+@{
+	ViewData["Title"] = "Dados do formador";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Formadores" asp-action="Edit" method="post">
+	<div class="mb-3">
+		<label for="Nif" class="form-label">Número de contribuinte</label>
+		<input type="text" class="form-control" id="Nif" asp-for="Nif" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="Nome" class="form-label">Nome do formador</label>
+		<input type="text" class="form-control" id="Nome" asp-for="Nome">
+	</div>
+	<div class="mb-3">
+		<label for="Email" class="form-label">Email</label>
+		<input type="email" class="form-control" id="Email" asp-for="Email">
+	</div>
+	<div class="mb-3">
+		<label for="Tlm" class="form-label">Contato do formador</label>
+		<input type="text" class="form-control" id="Tlm" asp-for="Telemovel">
+	</div>
+	
+	<button type="submit" class="btn btn-primary btn-block">Atualizar dados</button>
+	<button type="submit" class="btn btn-primary btn-block" asp-controller="Formadores" asp-action="Index">Cancelar</button>
+</form>

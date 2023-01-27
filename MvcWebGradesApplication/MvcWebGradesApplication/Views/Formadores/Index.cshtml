@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MvcWebGradesApplication.Models.FormadorModel>
+@{
+    ViewData["Title"] = "Lista de Formadores";
+}
+
+<h2 class="mt-2">@ViewData["Title"]</h2>
+<hr class="mb-5" />
+
+@if (TempData["MensagemDeSucesso"] != null)
+{
+    <div class="alert alert-success text-center my-3" role="alert">
+        <button class="close-alert btn-dark">X</button>
+        @TempData["MensagemDeSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemDeCancelamento"] != null) {
+    <div class="alert alert-danger text-center my-3" role="alert">
+        <button class="close-alert btn-dark">X</button>
+        @TempData["MensagemDeCancelamento"]
+    </div>
+}
+
+<table class="table table-striped" id="tabela-formadores">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nif)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Telemovel)</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var formador in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => formador.Nif)</td>
+                    <td>@Html.DisplayFor(modelItem => formador.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => formador.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => formador.Telemovel)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-nif="@formador.Nif">Editar</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-nif="@formador.Nif">Remover</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+
