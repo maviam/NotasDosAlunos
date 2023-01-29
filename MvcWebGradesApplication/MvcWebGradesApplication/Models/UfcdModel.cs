@@ -10,7 +10,7 @@ namespace MvcWebGradesApplication.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Codigo { get; set; }
-        public string Ufcd { get; set; }
+        public string Denominacao { get; set; }
         public int Duracao { get; set; }
         public ComponenteEnum Componente { get; set; }
         public long FormadorNif { get; set; }

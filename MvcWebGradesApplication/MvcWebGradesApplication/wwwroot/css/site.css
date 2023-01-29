@@ -1,40 +1,19 @@
-html {
-  font-size: 14px;
-}
+html { font-size: 14px; }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+  html { font-size: 16px; }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-header > nav, .dropdown-menu {
-    background-color: #11111F;
-}
-
+html { position: relative; min-height: 100%; }
+body { margin-bottom: 60px; }
+header > nav, .dropdown-menu { background-color: #11111F; }
 .navbar-nav > li { margin-left: 4%; margin-right: 4%; }
-
 .navbar-nav > li, .navbar-nav > li > a { color: #FFF; }
-
-.navbar-nav > li > .dropdown-menu > li > a {
-    font-size: 0.75em;
-    color: #FFF;
-}
-
-.navbar-nav > li > .dropdown-menu > li:hover > a, .navbar-nav > li:hover > a {
+.navbar-nav > li > .dropdown-menu > li > a { font-size: 0.75em; color: #FFF; }
+.navbar-nav > li > .dropdown-menu > li:hover > a, .navbar-nav > li:hover > a { 
     background-color: #000;
     color: #14A9E4;
 }
-
 .close-alert {
     position: absolute;
     right: -15px;
@@ -43,9 +22,13 @@ header > nav, .dropdown-menu {
     height: 31px;
     border-radius: 15px;
     font-weight: bolder;
+    background-color: #000;
+    color: #FFF;
 }
-
-
 .imgbg { background-image: url('../images/logo.png'); width: 111px; height: 67px; }
 .table-striped tr:nth-child(odd) td{ background-color: #14A9E4; }
-.remover form button { font-size: 1.5em; letter-spacing: 2px; font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; }
+.remover form button { 
+    font-size: 1.5em; 
+    letter-spacing: 2px; 
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; 
+}

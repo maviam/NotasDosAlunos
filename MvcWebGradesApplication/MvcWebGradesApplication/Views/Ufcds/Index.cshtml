@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MvcWebGradesApplication.Models.UfcdModel>
+@{
+    ViewData["Title"] = "Lista de Ufcds";
+}
+
+<h2 class="mt-2">@ViewData["Title"]</h2>
+<hr class="mb-5" />
+
+@if (TempData["MensagemDeSucesso"] != null)
+{
+    <div class="alert alert-success text-center my-3" role="alert">
+        <button class="close-alert">X</button>
+        @TempData["MensagemDeSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemDeCancelamento"] != null) {
+    <div class="alert alert-danger text-center my-3" role="alert">
+        <button class="close-alert">X</button>
+        @TempData["MensagemDeCancelamento"]
+    </div>
+}
+
+<table class="table table-striped" id="tabela-ufcds">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Codigo)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Denominacao)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Duracao)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Componente)</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ufcd in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => ufcd.Codigo)</td>
+                    <td>@Html.DisplayFor(modelItem => ufcd.Denominacao)</td>
+                    <td>@Html.DisplayFor(modelItem => ufcd.Duracao)</td>
+                    <td>@Html.DisplayFor(modelItem => ufcd.Componente)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-codigo="@ufcd.Codigo">Editar</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-codigo="@ufcd.Codigo">Remover</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+

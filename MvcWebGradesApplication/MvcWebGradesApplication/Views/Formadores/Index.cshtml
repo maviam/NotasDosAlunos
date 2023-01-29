@@ -9,14 +9,14 @@
 @if (TempData["MensagemDeSucesso"] != null)
 {
     <div class="alert alert-success text-center my-3" role="alert">
-        <button class="close-alert btn-dark">X</button>
+        <button class="close-alert">X</button>
         @TempData["MensagemDeSucesso"]
     </div>
 }
 
 @if (TempData["MensagemDeCancelamento"] != null) {
     <div class="alert alert-danger text-center my-3" role="alert">
-        <button class="close-alert btn-dark">X</button>
+        <button class="close-alert">X</button>
         @TempData["MensagemDeCancelamento"]
     </div>
 }

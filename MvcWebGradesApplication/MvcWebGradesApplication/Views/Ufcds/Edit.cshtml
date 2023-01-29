@@ -1,0 +1,32 @@
+﻿@using MvcWebGradesApplication.Models.Enums;
+@model MvcWebGradesApplication.Models.ViewModels.UfcdFormsViewModel
+@{
+	ViewData["Title"] = "Dados do formador";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Ufcds" asp-action="Edit" method="post">
+	<div class="mb-3">
+		<label for="Codigo" class="form-label">Código da Ufcd</label>
+		<input type="text" class="form-control" id="Codigo" asp-for="Ufcd.Codigo">
+	</div>
+	<div class="mb-3">
+		<label for="NomeUfcd" class="form-label">Denominação da Ufcd</label>
+		<input type="text" class="form-control" id="NomeUfcd" asp-for="Ufcd.Denominacao">
+	</div>
+	<div class="mb-3">
+		<label for="Duracao" class="form-label">Duração da Ufcd</label>
+		<input type="number" class="form-control" id="Duracao" asp-for="Ufcd.Duracao">
+	</div>
+	<div class="mb-3">
+		<label for="Componente" class="form-label">Componente da Ufcd</label>
+		<select class="form-control" id="Componente" asp-for="Ufcd.Componente" asp-items="Html.GetEnumSelectList<ComponenteEnum>()"></select>
+	</div>
+	<div class="mb-3">
+		<label for="Formador" class="form-label">Formador da Ufcd</label>
+		<select class="form-control" id="Formador" asp-for="Ufcd.FormadorNif" asp-items="@(new SelectList(Model.Formadores,"Nif","Nome"))"></select>
+	</div>
+	<button type="submit" class="btn btn-primary btn-block">Atualizar dados</button>
+	<button type="submit" class="btn btn-primary btn-block" asp-controller="Ufcds" asp-action="Index">Cancelar</button>
+</form>

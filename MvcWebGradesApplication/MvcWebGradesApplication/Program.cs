@@ -14,6 +14,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddScoped<IFormandoRepository, FormandoRepository>();
 builder.Services.AddScoped<IFormadorRepository, FormadorRepository>();
+builder.Services.AddScoped<IUfcdRepository, UfcdRepository>();
 
 var app = builder.Build();
 

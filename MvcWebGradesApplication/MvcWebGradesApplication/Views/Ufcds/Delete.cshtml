@@ -1,0 +1,13 @@
+﻿@model MvcWebGradesApplication.Models.UfcdModel
+
+<div class="h2 text-center mt-5">
+	Tem a certeza que deseja remover a ufcd @Model.Denominacao?
+</div>
+<div class="text-center remover">
+	<form method="post" asp-action="Delete" class="mt-5">
+		<input type="hidden" asp-for="Codigo" />
+		<button class="btn btn-primary col-12 text-uppercase mb-1" type="submit">Sim</button>
+		<button class="btn btn-danger col-12 text-uppercase" type="submit" asp-controller="Ufcds" asp-action="Index">Não</button>
+	</form>
+</div>
+
