@@ -9,18 +9,22 @@
 	<div class="mb-3">
 		<label for="Nif" class="form-label">Número de contribuinte</label>
 		<input type="text" class="form-control" id="Nif" asp-for="Nif">
+		<span asp-validation-for="Nif" class="text-danger"></span>
 	</div>
 	<div class="mb-3">
 		<label for="Nome" class="form-label">Nome do formador</label>
 		<input type="text" class="form-control" id="Nome" asp-for="Nome">
+		<span asp-validation-for="Nome" class="text-danger"></span>
 	</div>
 	<div class="mb-3">
 		<label for="Email" class="form-label">Email</label>
 		<input type="email" class="form-control" id="Email" asp-for="Email">
+		<span asp-validation-for="Email" class="text-danger"></span>
 	</div>
 	<div class="mb-3">
 		<label for="Tlm" class="form-label">Contato do formador</label>
 		<input type="text" class="form-control" id="Tlm" asp-for="Telemovel">
+		<span asp-validation-for="Telemovel" class="text-danger"></span>
 	</div>
 	<button type="submit" class="btn btn-primary btn-block">Enviar dados</button>
 	<button type="submit" class="btn btn-primary btn-block" asp-controller="Formadores" asp-action="Index">Cancelar</button>

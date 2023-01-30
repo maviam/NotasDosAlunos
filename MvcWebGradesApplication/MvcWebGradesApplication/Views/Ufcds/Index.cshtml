@@ -24,27 +24,27 @@
 <table class="table table-striped" id="tabela-ufcds">
     <thead>
         <tr>
-            <th scope="col">@Html.DisplayNameFor(model => model.Codigo)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.Denominacao)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.Duracao)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.Componente)</th>
+            <th class="text-center" scope="col">@Html.DisplayNameFor(model => model.Codigo)</th>
+            <th class="text-center" scope="col">@Html.DisplayNameFor(model => model.Denominacao)</th>
+            <th class="text-center" scope="col">@Html.DisplayNameFor(model => model.Duracao)</th>
+            <th class="text-center" scope="col">@Html.DisplayNameFor(model => model.Componente)</th>
             <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var ufcd in Model)
-        {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => ufcd.Codigo)</td>
-                    <td>@Html.DisplayFor(modelItem => ufcd.Denominacao)</td>
-                    <td>@Html.DisplayFor(modelItem => ufcd.Duracao)</td>
-                    <td>@Html.DisplayFor(modelItem => ufcd.Componente)</td>
-                    <td>
-                        <a class="btn btn-primary" asp-action="Edit" asp-route-codigo="@ufcd.Codigo">Editar</a>
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-codigo="@ufcd.Codigo">Remover</a>
-                    </td>
-                </tr>
-        }
+    @foreach (var ufcd in Model)
+    {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => ufcd.Codigo)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => ufcd.Denominacao)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => ufcd.Duracao)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => ufcd.Componente)</td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-codigo="@ufcd.Codigo">Editar</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-codigo="@ufcd.Codigo">Remover</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
 

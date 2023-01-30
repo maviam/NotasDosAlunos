@@ -9,11 +9,19 @@ namespace MvcWebGradesApplication.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Codigo { get; set; }
-        public string Denominacao { get; set; }
-        public int Duracao { get; set; }
+		[Display(Name = "Código da Ufcd")]
+        [DisplayFormat(DataFormatString = "{0:0000}")]
+		public int Codigo { get; set; }
+
+		[Display(Name = "Ufcd")]
+		public string Denominacao { get; set; }
+
+		[Display(Name = "Duração (em horas)")]
+		public int Duracao { get; set; }
         public ComponenteEnum Componente { get; set; }
-        public long FormadorNif { get; set; }
+
+		[Display(Name = "Formador")]
+		public long FormadorNif { get; set; }
         [ForeignKey(nameof(FormadorNif))]
         public virtual FormadorModel Formador { get; set; }
     }

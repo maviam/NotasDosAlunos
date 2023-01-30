@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MvcWebGradesApplication.Models;
 using MvcWebGradesApplication.Repositories;
 
@@ -26,7 +27,13 @@ namespace MvcWebGradesApplication.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(FormadorModel formador)
         {
-            if (formador != null)
+			if (!ModelState.IsValid)
+			{
+
+                return View(formador);
+			}
+
+			if (formador != null)
             {
                 TempData["MensagemDeSucesso"] = "Formador inserido com sucesso!";
                 _formadorRepository.Inserir(formador);
@@ -36,8 +43,8 @@ namespace MvcWebGradesApplication.Controllers
                 TempData["MensagemDeCancelamento"] = "Erro na inserção do formador! Tente navamente";
             }
             
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction(nameof(Index));
+		}
 
         public IActionResult Edit(long? nif)
         {
